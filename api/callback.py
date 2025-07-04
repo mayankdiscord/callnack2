@@ -3,7 +3,7 @@ import urllib.parse, requests
 
 CLIENT_ID = "1390626260056674366"
 CLIENT_SECRET = "hL-Ji669_YHUf7ICB91PazHBrBeU0_eA"
-REDIRECT_URI = "https://your-vercel-project.vercel.app/api/callback"
+REDIRECT_URI = "https://verify-orcin-nine.vercel.app/api/callback"
 WEBHOOK_URL = "https://discord.com/api/webhooks/1390330277854969906/3Xxwg1PF0sxuV4j9aT-4gx1Q2CLfqNBMX_GuZFlheEsA-iAYYrF-MWRxYcL8lSOrNRZf"
 
 class handler(BaseHTTPRequestHandler):
