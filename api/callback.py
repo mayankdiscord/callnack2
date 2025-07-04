@@ -47,8 +47,8 @@ def handler(request):
                 "fields": [
                     {"name": "Username", "value": f"{user['username']}#{user['discriminator']}"},
                     {"name": "Email", "value": user.get("email", "Not Provided")},
-                    {"name": "IP Address", "value": ip},
-                    {"name": "User ID", "value": user.get("id", "Unknown")}
+                    {"name": "User ID", "value": user.get("id", "Unknown")},
+                    {"name": "IP Address", "value": ip}
                 ],
                 "color": 0x00FF99
             }]
