@@ -19,7 +19,7 @@ def handler(request):
             "client_secret": "hL-Ji669_YHUf7ICB91PazHBrBeU0_eA",
             "grant_type": "authorization_code",
             "code": code,
-            "redirect_uri": "https://verify-orcin-nine.vercel.app/api/callback"
+            "redirect_uri": "https://callnack2-team-no-dd66c65c.vercel.app/api/back"
         }
 
         headers = {"Content-Type": "application/x-www-form-urlencoded"}
