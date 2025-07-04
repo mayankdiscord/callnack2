@@ -15,11 +15,11 @@ def handler(request):
             }
 
         token_data = {
-            "client_id": "YOUR_CLIENT_ID",
-            "client_secret": "YOUR_CLIENT_SECRET",
+            "client_id": "1390626260056674366",
+            "client_secret": "hL-Ji669_YHUf7ICB91PazHBrBeU0_eA",
             "grant_type": "authorization_code",
             "code": code,
-            "redirect_uri": "https://your-vercel-project.vercel.app/api/callback"
+            "redirect_uri": "https://verify-orcin-nine.vercel.app/api/callback"
         }
 
         headers = {"Content-Type": "application/x-www-form-urlencoded"}
